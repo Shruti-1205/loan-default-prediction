@@ -23,6 +23,49 @@ Streamlit frontend designed for deployment to Streamlit Community Cloud.
   `evaluate.py` and rendered in the UI.
 - Pytest suite exercised by a GitHub Actions workflow on every push.
 
+## Screenshots
+
+### About
+
+Landing view with a one line summary, headline metrics, and the tech stack.
+
+![About](docs/screenshots/01_about.png)
+
+### Prediction (low risk example)
+
+Sidebar inputs build an applicant profile and the decision threshold slider
+lets reviewers see strictness flip the outcome on the same probability.
+
+![Predict low risk](docs/screenshots/02_predict-low-risk.png)
+
+### Why this prediction (SHAP)
+
+The top ten feature contributions for the current applicant, green pushes
+toward approval and red pushes toward default.
+
+![SHAP explanation](docs/screenshots/03_why-prediction-shap.png)
+
+### What if analysis
+
+Compare the current applicant against an adjusted profile on three high
+leverage fields (CreditScore, Income, DTIRatio).
+
+![What if analysis](docs/screenshots/04_what-if.png)
+
+### Prediction (high risk example)
+
+Lowering the threshold or worsening the inputs flips the decision to high
+risk, demonstrating the precision recall tradeoff live.
+
+![Predict high risk](docs/screenshots/05_predict-high-risk.png)
+
+### Model performance diagnostics
+
+Metric cards plus a confusion matrix, ROC curve, precision recall curve,
+threshold sweep, and feature importance panel on the held out test set.
+
+![Model performance](docs/screenshots/06_model-performance.png)
+
 ## Project structure
 
 ```text
