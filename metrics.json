@@ -1,0 +1,29 @@
+{
+  "model_metadata": {
+    "scikit_learn_version": "1.6.0"
+  },
+  "n_test": 51070,
+  "class_balance": {
+    "no_default": 0.8838652829449775,
+    "default": 0.11613471705502251
+  },
+  "default_threshold_metrics": {
+    "threshold": 0.5,
+    "f1": 0.38675434476279946,
+    "precision": 0.2680513054235302,
+    "recall": 0.6941493845894453
+  },
+  "optimal_threshold": 0.595,
+  "optimal_threshold_metrics": {
+    "f1": 0.4187203255708795,
+    "precision": 0.3785772690106296,
+    "recall": 0.4683864441072332,
+    "confusion_matrix": {
+      "tn": 40579,
+      "fp": 4560,
+      "fn": 3153,
+      "tp": 2778
+    }
+  },
+  "roc_auc": 0.8022581694852016
+}

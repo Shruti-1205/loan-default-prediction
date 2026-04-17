@@ -1,0 +1,22 @@
+{
+  "slider_fields": {
+    "Age": [18, 100],
+    "Income": [10000, 100000],
+    "LoanAmount": [500, 500000],
+    "CreditScore": [300, 850],
+    "MonthsEmployed": [0, 600],
+    "NumCreditLines": [0, 20],
+    "InterestRate": [0.01, 35],
+    "LoanTerm": [1, 360],
+    "DTIRatio": [0.0, 1.0]
+  },
+  "single_select_fields": {
+    "Education": ["High School", "Bachelor's", "Master's", "Doctorate"],
+    "EmploymentType": ["Full-time", "Part-time", "Self-employed", "Unemployed"],
+    "MaritalStatus": ["Single", "Married", "Divorced"],
+    "HasMortgage": ["Yes", "No"],
+    "HasDependents": ["Yes", "No"],
+    "LoanPurpose": ["Home", "Auto", "Personal", "Business", "Education", "Other"],
+    "HasCoSigner": ["Yes", "No"]
+  }
+}
