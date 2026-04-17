@@ -1,5 +1,7 @@
 # Loan Default Prediction
 
+**Live demo:** [predict-loan-default.streamlit.app](https://predict-loan-default.streamlit.app/)
+
 End to end machine learning project that predicts the probability a loan
 applicant will default. The repository contains the training pipeline, a
 FastAPI service that serves predictions with SHAP explanations, and a
@@ -23,7 +25,7 @@ Streamlit frontend designed for deployment to Streamlit Community Cloud.
 
 ## Project structure
 
-```
+```text
 .
 ├── app/
 │   └── main.py                    FastAPI service
@@ -100,7 +102,7 @@ This writes `metrics.json` and the PNG charts under `evaluation_artifacts/`.
 uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-Swagger UI is available at http://127.0.0.1:8000/docs.
+Swagger UI is available at `http://127.0.0.1:8000/docs`.
 
 ### Run the Streamlit app
 
@@ -142,12 +144,22 @@ self contained (it loads the joblib pipeline directly), so the simplest
 public demo only requires Streamlit Community Cloud.
 
 1. Push the repository to GitHub.
-2. Visit https://share.streamlit.io and create a new app pointing at
-   `streamlit_app/streamlit_app.py`.
+2. Visit [share.streamlit.io](https://share.streamlit.io) and create a new
+   app pointing at `streamlit_app/streamlit_app.py`.
 3. Leave `USE_API` unset so the app uses the local pipeline.
 4. Optional: deploy `app/main.py` to Render or Railway using the provided
    Dockerfile, then set `USE_API=true` and `API_URL` in the Streamlit Cloud
    app settings.
+
+## Future work
+
+- Wrap the classifier in `CalibratedClassifierCV` so raw probabilities
+  reflect empirical default rates rather than the compressed values
+  Random Forests produce by default.
+- Ship a lightweight drift monitor that compares recent input distributions
+  against training, and surface drift status in the Model Performance tab.
+- Add shadow deployment for an XGBoost variant and track relative
+  performance over time.
 
 ## API reference
 
